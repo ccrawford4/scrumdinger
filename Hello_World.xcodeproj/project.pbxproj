@@ -18,6 +18,7 @@
 		929CC14B2BF11056009AD741 /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC14A2BF11056009AD741 /* DailyScrum.swift */; };
 		929CC1512BF1180B009AD741 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC1502BF1180B009AD741 /* CardView.swift */; };
 		929CC1532BF119F5009AD741 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC1522BF119F5009AD741 /* TrailingIconLabelStyle.swift */; };
+		929CC1562BF11E4B009AD741 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC1552BF11E4B009AD741 /* ScrumsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		929CC14A2BF11056009AD741 /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
 		929CC1502BF1180B009AD741 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		929CC1522BF119F5009AD741 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
+		929CC1552BF11E4B009AD741 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				929CC11F2BF101F4009AD741 /* MeetingView.swift */,
 				929CC1212BF101F6009AD741 /* Assets.xcassets */,
 				929CC1232BF101F6009AD741 /* Preview Content */,
+				929CC1552BF11E4B009AD741 /* ScrumsView.swift */,
 			);
 			path = Hello_World;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				929CC14B2BF11056009AD741 /* DailyScrum.swift in Sources */,
 				929CC1532BF119F5009AD741 /* TrailingIconLabelStyle.swift in Sources */,
 				929CC1492BF10EE1009AD741 /* Theme.swift in Sources */,
+				929CC1562BF11E4B009AD741 /* ScrumsView.swift in Sources */,
 				929CC1202BF101F4009AD741 /* MeetingView.swift in Sources */,
 				929CC11E2BF101F4009AD741 /* Hello_WorldApp.swift in Sources */,
 				929CC1512BF1180B009AD741 /* CardView.swift in Sources */,
