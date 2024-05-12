@@ -15,6 +15,7 @@
 		929CC1392BF101F6009AD741 /* Hello_WorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC1382BF101F6009AD741 /* Hello_WorldUITests.swift */; };
 		929CC13B2BF101F6009AD741 /* Hello_WorldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC13A2BF101F6009AD741 /* Hello_WorldUITestsLaunchTests.swift */; };
 		929CC1492BF10EE1009AD741 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC1482BF10EE1009AD741 /* Theme.swift */; };
+		929CC14B2BF11056009AD741 /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC14A2BF11056009AD741 /* DailyScrum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		929CC1382BF101F6009AD741 /* Hello_WorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello_WorldUITests.swift; sourceTree = "<group>"; };
 		929CC13A2BF101F6009AD741 /* Hello_WorldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello_WorldUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		929CC1482BF10EE1009AD741 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		929CC14A2BF11056009AD741 /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				929CC1482BF10EE1009AD741 /* Theme.swift */,
+				929CC14A2BF11056009AD741 /* DailyScrum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929CC14B2BF11056009AD741 /* DailyScrum.swift in Sources */,
 				929CC1492BF10EE1009AD741 /* Theme.swift in Sources */,
 				929CC1202BF101F4009AD741 /* MeetingView.swift in Sources */,
 				929CC11E2BF101F4009AD741 /* Hello_WorldApp.swift in Sources */,
