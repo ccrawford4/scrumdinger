@@ -19,6 +19,7 @@
 		929CC1532BF119F5009AD741 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC1522BF119F5009AD741 /* TrailingIconLabelStyle.swift */; };
 		929CC1562BF11E4B009AD741 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC1552BF11E4B009AD741 /* ScrumsView.swift */; };
 		929CC1582BF1208D009AD741 /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC1572BF1208D009AD741 /* ScrumdingerApp.swift */; };
+		929CC15A2BF1245E009AD741 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CC1592BF1245E009AD741 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		929CC1522BF119F5009AD741 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 		929CC1552BF11E4B009AD741 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 		929CC1572BF1208D009AD741 /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
+		929CC1592BF1245E009AD741 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				929CC1232BF101F6009AD741 /* Preview Content */,
 				929CC1552BF11E4B009AD741 /* ScrumsView.swift */,
 				929CC1572BF1208D009AD741 /* ScrumdingerApp.swift */,
+				929CC1592BF1245E009AD741 /* DetailView.swift */,
 			);
 			path = Hello_World;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				929CC14B2BF11056009AD741 /* DailyScrum.swift in Sources */,
+				929CC15A2BF1245E009AD741 /* DetailView.swift in Sources */,
 				929CC1532BF119F5009AD741 /* TrailingIconLabelStyle.swift in Sources */,
 				929CC1582BF1208D009AD741 /* ScrumdingerApp.swift in Sources */,
 				929CC1492BF10EE1009AD741 /* Theme.swift in Sources */,
