@@ -1,5 +1,5 @@
 //
-//  Hello_WorldApp.swift
+//  ScrumdingerApp.swift
 //  Hello_World
 //
 //  Created by Calum Crawford on 5/12/24.
@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct Hello_WorldApp: App {
+struct ScrumdingerApp: App {
     var body: some Scene {
         WindowGroup {
-            MeetingView()
+            ScrumsView(scrums: DailyScrum.sampleData)
         }
     }
 }
