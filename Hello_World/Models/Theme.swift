@@ -36,22 +36,22 @@ enum Theme: String, CaseIterable, Identifiable {
     
     var mainColor: Color {
             switch self {
-            case .bubblegum: return Color("bubblegumColor")
-            case .buttercup: return Color("buttercupColor")
-            case .indigo: return Color("indigoColor")
-            case .lavender: return Color("lavenderColor")
-            case .magenta: return Color("magentaColor")
-            case .navy: return Color("navyColor")
-            case .orange: return Color("orangeColor")
-            case .oxblood: return Color("oxbloodColor")
-            case .periwinkle: return Color("periwinkleColor")
-            case .poppy: return Color("poppyColor")
-            case .purple: return Color("purpleColor")
-            case .seafoam: return Color("seafoamColor")
-            case .sky: return Color("skyColor")
-            case .tan: return Color("tanColor")
-            case .teal: return Color("tealColor")
-            case .yellow: return Color("yellowColor")
+            case .bubblegum: return Color("bubblegumColorSet")
+            case .buttercup: return Color("buttercupColorSet")
+            case .indigo: return Color("indigoColorSet")
+            case .lavender: return Color("lavenderColorSet")
+            case .magenta: return Color("magentaColorSet")
+            case .navy: return Color("navyColorSet")
+            case .orange: return Color("orangeColorSet")
+            case .oxblood: return Color("oxbloodColorSet")
+            case .periwinkle: return Color("periwinkleColorSet")
+            case .poppy: return Color("poppyColorSet")
+            case .purple: return Color("purpleColorSet")
+            case .seafoam: return Color("seafoamColorSet")
+            case .sky: return Color("skyColorSet")
+            case .tan: return Color("tanColorSet")
+            case .teal: return Color("tealColorSet")
+            case .yellow: return Color("yellowColorSet")
             }
         }
     
