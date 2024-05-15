@@ -54,10 +54,23 @@ struct DetailView: View {
             NavigationStack {
                 DetailEditView()
                     .navigationTitle(scrum.title)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                isPresentingEditView = false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                isPresentingEditView = false
+                            }
+                        }
+                    }
             }
         }
     }
 }
+
 
 // Default way to create a view
 struct DetailView_Previews: PreviewProvider {
