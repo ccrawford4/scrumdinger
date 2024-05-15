@@ -1,1 +1,1 @@
-# Scrum Meeting Management Tool Built for Native iOS 
+# Scrum Meeting Management Tool Built in Swift, designed for iOS
