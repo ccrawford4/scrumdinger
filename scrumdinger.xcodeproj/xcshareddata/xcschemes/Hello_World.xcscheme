@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "929CC1192BF101F3009AD741"
-               BuildableName = "Hello_World.app"
-               BlueprintName = "Hello_World"
-               ReferencedContainer = "container:Hello_World.xcodeproj">
+               BuildableName = "scrumdinger.app"
+               BlueprintName = "scrumdinger"
+               ReferencedContainer = "container:scrumdinger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,9 +36,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "929CC1292BF101F6009AD741"
-               BuildableName = "Hello_WorldTests.xctest"
-               BlueprintName = "Hello_WorldTests"
-               ReferencedContainer = "container:Hello_World.xcodeproj">
+               BuildableName = "scrumdingerTests.xctest"
+               BlueprintName = "scrumdingerTests"
+               ReferencedContainer = "container:scrumdinger.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "929CC1332BF101F6009AD741"
-               BuildableName = "Hello_WorldUITests.xctest"
-               BlueprintName = "Hello_WorldUITests"
-               ReferencedContainer = "container:Hello_World.xcodeproj">
+               BuildableName = "scrumdingerUITests.xctest"
+               BlueprintName = "scrumdingerUITests"
+               ReferencedContainer = "container:scrumdinger.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -69,9 +69,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "929CC1192BF101F3009AD741"
-            BuildableName = "Hello_World.app"
-            BlueprintName = "Hello_World"
-            ReferencedContainer = "container:Hello_World.xcodeproj">
+            BuildableName = "scrumdinger.app"
+            BlueprintName = "scrumdinger"
+            ReferencedContainer = "container:scrumdinger.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -86,9 +86,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "929CC1192BF101F3009AD741"
-            BuildableName = "Hello_World.app"
-            BlueprintName = "Hello_World"
-            ReferencedContainer = "container:Hello_World.xcodeproj">
+            BuildableName = "scrumdinger.app"
+            BlueprintName = "scrumdinger"
+            ReferencedContainer = "container:scrumdinger.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

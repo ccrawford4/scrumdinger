@@ -45,13 +45,13 @@
 /* Begin PBXFileReference section */
 		92837DA02BF44AE700485BA4 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		9296F3552BF2E47900A65155 /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
-		929CC11A2BF101F4009AD741 /* Hello_World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hello_World.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		929CC11A2BF101F4009AD741 /* scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929CC11F2BF101F4009AD741 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 		929CC1212BF101F6009AD741 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929CC1242BF101F6009AD741 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		929CC12A2BF101F6009AD741 /* Hello_WorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hello_WorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		929CC12A2BF101F6009AD741 /* scrumdingerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scrumdingerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		929CC12E2BF101F6009AD741 /* Hello_WorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello_WorldTests.swift; sourceTree = "<group>"; };
-		929CC1342BF101F6009AD741 /* Hello_WorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hello_WorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		929CC1342BF101F6009AD741 /* scrumdingerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scrumdingerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		929CC1382BF101F6009AD741 /* Hello_WorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello_WorldUITests.swift; sourceTree = "<group>"; };
 		929CC13A2BF101F6009AD741 /* Hello_WorldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello_WorldUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		929CC1482BF10EE1009AD741 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -92,9 +92,9 @@
 		929CC1112BF101F3009AD741 = {
 			isa = PBXGroup;
 			children = (
-				929CC11C2BF101F4009AD741 /* Hello_World */,
-				929CC12D2BF101F6009AD741 /* Hello_WorldTests */,
-				929CC1372BF101F6009AD741 /* Hello_WorldUITests */,
+				929CC11C2BF101F4009AD741 /* scrumdinger */,
+				929CC12D2BF101F6009AD741 /* scrumdinger_Tests */,
+				929CC1372BF101F6009AD741 /* scrumdinger_UITests */,
 				929CC11B2BF101F4009AD741 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,14 +102,14 @@
 		929CC11B2BF101F4009AD741 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				929CC11A2BF101F4009AD741 /* Hello_World.app */,
-				929CC12A2BF101F6009AD741 /* Hello_WorldTests.xctest */,
-				929CC1342BF101F6009AD741 /* Hello_WorldUITests.xctest */,
+				929CC11A2BF101F4009AD741 /* scrumdinger.app */,
+				929CC12A2BF101F6009AD741 /* scrumdingerTests.xctest */,
+				929CC1342BF101F6009AD741 /* scrumdingerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		929CC11C2BF101F4009AD741 /* Hello_World */ = {
+		929CC11C2BF101F4009AD741 /* scrumdinger */ = {
 			isa = PBXGroup;
 			children = (
 				929CC1232BF101F6009AD741 /* Preview Content */,
@@ -118,7 +118,7 @@
 				929CC1212BF101F6009AD741 /* Assets.xcassets */,
 				929CC1572BF1208D009AD741 /* ScrumdingerApp.swift */,
 			);
-			path = Hello_World;
+			path = scrumdinger;
 			sourceTree = "<group>";
 		};
 		929CC1232BF101F6009AD741 /* Preview Content */ = {
@@ -129,21 +129,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		929CC12D2BF101F6009AD741 /* Hello_WorldTests */ = {
+		929CC12D2BF101F6009AD741 /* scrumdinger_Tests */ = {
 			isa = PBXGroup;
 			children = (
 				929CC12E2BF101F6009AD741 /* Hello_WorldTests.swift */,
 			);
-			path = Hello_WorldTests;
+			path = scrumdinger_Tests;
 			sourceTree = "<group>";
 		};
-		929CC1372BF101F6009AD741 /* Hello_WorldUITests */ = {
+		929CC1372BF101F6009AD741 /* scrumdinger_UITests */ = {
 			isa = PBXGroup;
 			children = (
 				929CC1382BF101F6009AD741 /* Hello_WorldUITests.swift */,
 				929CC13A2BF101F6009AD741 /* Hello_WorldUITestsLaunchTests.swift */,
 			);
-			path = Hello_WorldUITests;
+			path = scrumdinger_UITests;
 			sourceTree = "<group>";
 		};
 		929CC1472BF10ECF009AD741 /* Models */ = {
@@ -173,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		929CC1192BF101F3009AD741 /* Hello_World */ = {
+		929CC1192BF101F3009AD741 /* scrumdinger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 929CC13E2BF101F6009AD741 /* Build configuration list for PBXNativeTarget "Hello_World" */;
+			buildConfigurationList = 929CC13E2BF101F6009AD741 /* Build configuration list for PBXNativeTarget "scrumdinger" */;
 			buildPhases = (
 				929CC1162BF101F3009AD741 /* Sources */,
 				929CC1172BF101F3009AD741 /* Frameworks */,
@@ -185,14 +185,14 @@
 			);
 			dependencies = (
 			);
-			name = Hello_World;
+			name = scrumdinger;
 			productName = Hello_World;
-			productReference = 929CC11A2BF101F4009AD741 /* Hello_World.app */;
+			productReference = 929CC11A2BF101F4009AD741 /* scrumdinger.app */;
 			productType = "com.apple.product-type.application";
 		};
-		929CC1292BF101F6009AD741 /* Hello_WorldTests */ = {
+		929CC1292BF101F6009AD741 /* scrumdingerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 929CC1412BF101F6009AD741 /* Build configuration list for PBXNativeTarget "Hello_WorldTests" */;
+			buildConfigurationList = 929CC1412BF101F6009AD741 /* Build configuration list for PBXNativeTarget "scrumdingerTests" */;
 			buildPhases = (
 				929CC1262BF101F6009AD741 /* Sources */,
 				929CC1272BF101F6009AD741 /* Frameworks */,
@@ -203,14 +203,14 @@
 			dependencies = (
 				929CC12C2BF101F6009AD741 /* PBXTargetDependency */,
 			);
-			name = Hello_WorldTests;
+			name = scrumdingerTests;
 			productName = Hello_WorldTests;
-			productReference = 929CC12A2BF101F6009AD741 /* Hello_WorldTests.xctest */;
+			productReference = 929CC12A2BF101F6009AD741 /* scrumdingerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		929CC1332BF101F6009AD741 /* Hello_WorldUITests */ = {
+		929CC1332BF101F6009AD741 /* scrumdingerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 929CC1442BF101F6009AD741 /* Build configuration list for PBXNativeTarget "Hello_WorldUITests" */;
+			buildConfigurationList = 929CC1442BF101F6009AD741 /* Build configuration list for PBXNativeTarget "scrumdingerUITests" */;
 			buildPhases = (
 				929CC1302BF101F6009AD741 /* Sources */,
 				929CC1312BF101F6009AD741 /* Frameworks */,
@@ -221,9 +221,9 @@
 			dependencies = (
 				929CC1362BF101F6009AD741 /* PBXTargetDependency */,
 			);
-			name = Hello_WorldUITests;
+			name = scrumdingerUITests;
 			productName = Hello_WorldUITests;
-			productReference = 929CC1342BF101F6009AD741 /* Hello_WorldUITests.xctest */;
+			productReference = 929CC1342BF101F6009AD741 /* scrumdingerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -249,7 +249,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 929CC1152BF101F3009AD741 /* Build configuration list for PBXProject "Hello_World" */;
+			buildConfigurationList = 929CC1152BF101F3009AD741 /* Build configuration list for PBXProject "scrumdinger" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -262,9 +262,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				929CC1192BF101F3009AD741 /* Hello_World */,
-				929CC1292BF101F6009AD741 /* Hello_WorldTests */,
-				929CC1332BF101F6009AD741 /* Hello_WorldUITests */,
+				929CC1192BF101F3009AD741 /* scrumdinger */,
+				929CC1292BF101F6009AD741 /* scrumdingerTests */,
+				929CC1332BF101F6009AD741 /* scrumdingerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -336,12 +336,12 @@
 /* Begin PBXTargetDependency section */
 		929CC12C2BF101F6009AD741 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 929CC1192BF101F3009AD741 /* Hello_World */;
+			target = 929CC1192BF101F3009AD741 /* scrumdinger */;
 			targetProxy = 929CC12B2BF101F6009AD741 /* PBXContainerItemProxy */;
 		};
 		929CC1362BF101F6009AD741 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 929CC1192BF101F3009AD741 /* Hello_World */;
+			target = 929CC1192BF101F3009AD741 /* scrumdinger */;
 			targetProxy = 929CC1352BF101F6009AD741 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -537,7 +537,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hello_World.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hello_World";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/scrumdinger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/scrumdinger";
 			};
 			name = Debug;
 		};
@@ -556,7 +556,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hello_World.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hello_World";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/scrumdinger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/scrumdinger";
 			};
 			name = Release;
 		};
@@ -597,7 +597,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		929CC1152BF101F3009AD741 /* Build configuration list for PBXProject "Hello_World" */ = {
+		929CC1152BF101F3009AD741 /* Build configuration list for PBXProject "scrumdinger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				929CC13C2BF101F6009AD741 /* Debug */,
@@ -606,7 +606,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		929CC13E2BF101F6009AD741 /* Build configuration list for PBXNativeTarget "Hello_World" */ = {
+		929CC13E2BF101F6009AD741 /* Build configuration list for PBXNativeTarget "scrumdinger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				929CC13F2BF101F6009AD741 /* Debug */,
@@ -615,7 +615,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		929CC1412BF101F6009AD741 /* Build configuration list for PBXNativeTarget "Hello_WorldTests" */ = {
+		929CC1412BF101F6009AD741 /* Build configuration list for PBXNativeTarget "scrumdingerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				929CC1422BF101F6009AD741 /* Debug */,
@@ -624,7 +624,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		929CC1442BF101F6009AD741 /* Build configuration list for PBXNativeTarget "Hello_WorldUITests" */ = {
+		929CC1442BF101F6009AD741 /* Build configuration list for PBXNativeTarget "scrumdingerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				929CC1452BF101F6009AD741 /* Debug */,
