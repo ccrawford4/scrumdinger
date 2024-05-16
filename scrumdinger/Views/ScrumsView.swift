@@ -1,6 +1,5 @@
 //
 //  ScrumsView.swift
-//  Hello_World
 //
 //  Created by Calum Crawford on 5/12/24.
 //
