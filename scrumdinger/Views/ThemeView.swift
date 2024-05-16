@@ -11,7 +11,6 @@ struct ThemeView: View {
     let theme: Theme
     
     var body: some View {
-       // print("AccentColor: \(theme.accentColor), Main Color: \(theme.mainColor)")
        Text(theme.name)
             .padding(4)
             .frame(maxWidth: .infinity)
