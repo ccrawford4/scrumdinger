@@ -14,7 +14,6 @@ struct ScrumsView: View {
             List($scrums) { $scrum in
                 NavigationLink(destination: DetailView(scrum: $scrum)) {
                     CardView(scrum: scrum)
-                    // Should be different colors
                 }
                 .listRowBackground(scrum.theme.mainColor)
             }
