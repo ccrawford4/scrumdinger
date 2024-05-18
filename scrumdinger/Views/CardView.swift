@@ -10,7 +10,6 @@ import SwiftUI
 struct CardView: View {
     let scrum: DailyScrum
     var body: some View {
-        print("Scrum tite: \(scrum.title) Scrum accent color:  \(scrum.theme.accentColor)")
         return VStack(alignment: .leading) {
             Text(scrum.title)
                 .font(.headline)
