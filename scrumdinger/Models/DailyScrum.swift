@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct DailyScrum: Identifiable {
+// Codable -> Allows you to use the Codable API to easily serialize data to and from JSON
+struct DailyScrum: Identifiable, Codable {
     let id: UUID
     var title: String
     var attendees: [Attendee]
@@ -36,7 +37,7 @@ struct DailyScrum: Identifiable {
 }
 
 extension DailyScrum {
-    struct Attendee: Identifiable {
+    struct Attendee: Identifiable, Codable {
         let id: UUID
         var name: String
         
