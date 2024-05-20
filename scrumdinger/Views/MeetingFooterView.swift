@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MeetingFooterView: View {
     let speakers: [ScrumTimer.Speaker]
-    var skipAction: ()->Void
+    let skipAction: ()->Void
     
     private var speakerNumber: Int? {
             guard let index = speakers.firstIndex(where: { !$0.isCompleted }) else { return nil }
@@ -32,7 +32,7 @@ struct MeetingFooterView: View {
                 } else {
                     Text(speakerText)
                     Spacer()
-                    Button(action: skipAction) {
+                   Button(action: skipAction) {
                         Image(systemName: "forward.fill")
                     }
                     .accessibilityLabel("Next Speaker")

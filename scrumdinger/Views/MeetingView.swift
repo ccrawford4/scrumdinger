@@ -7,6 +7,10 @@
 import SwiftUI
 import AVFoundation
 
+struct ActionWrapper {
+    var action: ()->Void
+}
+
 struct MeetingView: View {
     @Binding var scrum: DailyScrum
     @StateObject var scrumTimer = ScrumTimer()
