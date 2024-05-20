@@ -97,8 +97,7 @@ final class ScrumTimer: ObservableObject {
 
 
     nonisolated private func update() {
-
-
+        
         Task { @MainActor in
             guard let startDate,
                   !timerStopped else { return }
