@@ -38,6 +38,7 @@
 		929F8E362BFC1EE600F80E67 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F8E352BFC1EE600F80E67 /* SpeechRecognizer.swift */; };
 		929F8E382BFC254F00F80E67 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F8E372BFC254F00F80E67 /* HistoryView.swift */; };
 		92D9E2A32BF43F9E005D0C9A /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9E2A22BF43F9E005D0C9A /* ThemeView.swift */; };
+		92EF1A342BFC50BF00384545 /* RemoveScrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF1A332BFC50BE00384545 /* RemoveScrumView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		929F8E352BFC1EE600F80E67 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		929F8E372BFC254F00F80E67 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		92D9E2A22BF43F9E005D0C9A /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		92EF1A332BFC50BE00384545 /* RemoveScrumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveScrumView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				92837DBA2BF90C5100485BA4 /* ErrorView.swift */,
 				92837DBC2BF921F600485BA4 /* MeetingTimerView.swift */,
 				929F8E372BFC254F00F80E67 /* HistoryView.swift */,
+				92EF1A332BFC50BE00384545 /* RemoveScrumView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				92837DBD2BF921F600485BA4 /* MeetingTimerView.swift in Sources */,
 				92837DA12BF44AE700485BA4 /* ThemePicker.swift in Sources */,
 				92837DB42BF8F89A00485BA4 /* ScrumStore.swift in Sources */,
+				92EF1A342BFC50BF00384545 /* RemoveScrumView.swift in Sources */,
 				929CC14B2BF11056009AD741 /* DailyScrum.swift in Sources */,
 				92837DB92BF90BFD00485BA4 /* ErrorWrapper.swift in Sources */,
 				929CC15A2BF1245E009AD741 /* DetailView.swift in Sources */,
