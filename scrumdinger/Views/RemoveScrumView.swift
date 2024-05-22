@@ -8,23 +8,35 @@
 import SwiftUI
 
 struct RemoveScrumView: View {
-    var scrumTitle: String
+    @State var scrums: [DailyScrum]
+    let scrum: DailyScrum
+    var onCancel: () -> Void
+    var onConfirm: ()->Void
+    
     var body: some View {
-        Text("Are you sure you want to delete the \(scrumTitle) Scrum?")
         VStack {
-            Button(action: {}) {
-                Text("Yes")
+            Text("Are you sure you want to delete \(scrum.title)?")
+            HStack {
+                Button(action: onConfirm) {
+                    Text("Yes")
+                }
+                Button(action: onCancel) {
+                    Text("No")
+                }
             }
-            Button(action: {}) {
-                Text("No")
-            }
+            .padding(.top)
         }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 10)
+        
     }
 }
 
 struct RemoveScrumView_Previews: PreviewProvider {
-    static var title: String = DailyScrum.sampleData[0].title
+    static var scrums: [DailyScrum] = DailyScrum.sampleData
     static var previews: some View {
-        RemoveScrumView(scrumTitle: title)
+        RemoveScrumView(scrums: scrums, scrum: scrums[0], onCancel: {}, onConfirm: {})
     }
 }
