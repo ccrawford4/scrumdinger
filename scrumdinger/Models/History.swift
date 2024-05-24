@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct History: Identifiable, Codable {
+struct History: Identifiable, Codable, Equatable {
     let id: UUID
     let date: Date
     var attendees: [DailyScrum.Attendee]
