@@ -95,7 +95,7 @@ final class HelloWorld_TestsLaunch: XCTestCase {
         
         // Test that timer is scheduled
         XCTAssertNotNil(timerClass.getTimer(), "Timer should be initialized")
-        XCTAssertNotEqual(timerClass.getTimer()?.timeInterval, timerClass.getFrequency(), "Timer interval should be set to frequency")
+        XCTAssertEqual(timerClass.getTimer()?.timeInterval, timerClass.getFrequency(), "Timer interval should be set to frequency")
         
         // Wait to ensure that update() is called
         let expectation = expectation(description: "timer Fired")
