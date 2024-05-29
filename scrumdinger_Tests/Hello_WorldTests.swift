@@ -46,8 +46,6 @@ final class HelloWorld_TestsLaunch: XCTestCase {
     func testLoad() throws {
         let expectation = XCTestExpectation(description: "Load scrums")
         
-        // Use a mock data for testing
-        let mockScrums = DailyScrum.sampleData
         let mockData = try JSONEncoder().encode(mockScrums)
         try mockData.write(to: fileUrl())
         
@@ -89,7 +87,7 @@ final class HelloWorld_TestsLaunch: XCTestCase {
     // ************* TIMER TESTS ******************
     
     func testStartScrum() {
-        var mockScrum: DailyScrum = mockScrums[0]
+        let mockScrum: DailyScrum = mockScrums[0]
         let timerClass: ScrumTimer = ScrumTimer(lengthInMinutes: 1, attendees: mockScrum.attendees)
         
         timerClass.startScrum()
@@ -99,7 +97,7 @@ final class HelloWorld_TestsLaunch: XCTestCase {
         XCTAssertEqual(timerClass.getTimer()?.timeInterval, timerClass.getFrequency(), "Timer interval should be set to frequency")
         
         // Wait to ensure that update() is called
-        let expectation = expectation(description: "timer Fired")
+        let expectation = XCTestExpectation(description: "timer Fired")
         DispatchQueue.main.asyncAfter(deadline: .now() + timerClass.getFrequency() + 0.2) {
             // TODO: Resolve DarwinBoolean vs Boolean type errors to allow this test to run
             XCTAssertTrue(timerClass.updateCalled(), "update() should now be called by the timer")
@@ -109,9 +107,9 @@ final class HelloWorld_TestsLaunch: XCTestCase {
     }
     
     func testStopScrum() {
-        var mockScrum: DailyScrum = mockScrums[0]
+        let mockScrum: DailyScrum = mockScrums[0]
         let timerClass: ScrumTimer = ScrumTimer(lengthInMinutes: 1, attendees: mockScrum.attendees)
-        let expectation = self.expectation(description: "Timer invalidation")
+        let expectation = XCTestExpectation(description: "Stop Scrum")
         
         timerClass.startScrum()
         timerClass.stopScrum()
@@ -129,5 +127,20 @@ final class HelloWorld_TestsLaunch: XCTestCase {
             }
         }
         wait(for: [expectation], timeout: timerClass.getFrequency() + 0.5)
+    }
+    
+    func testChangeToSpeaker() {
+        // mockScrum speaker order: ["Cathy", "Daisy", "Simon", "Jonathan"]
+        let mockScrum: DailyScrum = mockScrums[0]
+        let timerClass: ScrumTimer = ScrumTimer(lengthInMinutes: 1, attendees: mockScrum.attendees)
+        let expectation = XCTestExpectation(description: "Change Speaker")
+        timerClass.startScrum()
+        
+        // Since we are changing at index 2 -> ensure the previous one is considered complete
+        timerClass.changeToSpeaker(at: 2)
+        XCTAssertTrue(timerClass.speakers[1].isCompleted == true)
+        
+        // The new current speaker should be simon
+        XCTAssertEqual(timerClass.activeSpeaker, "Speaker 3: Simon")
     }
 }

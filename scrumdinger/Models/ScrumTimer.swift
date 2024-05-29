@@ -58,6 +58,12 @@ final class ScrumTimer: ObservableObject {
         activeSpeaker = speakerText
     }
     
+    // Publicly accessible getters
+    
+    func getStartDate() -> Date? {
+        return self.startDate
+    }
+    
     func getTimerStopped() -> Bool {
         return self.timerStopped
     }
@@ -96,7 +102,7 @@ final class ScrumTimer: ObservableObject {
         }
     }
     
-    private func changeToSpeaker(at index: Int) {
+    func changeToSpeaker(at index: Int) {
         if index > 0 {
             let previousSpeakerIndex = index - 1
             speakers[previousSpeakerIndex].isCompleted = true
@@ -135,8 +141,7 @@ final class ScrumTimer: ObservableObject {
     }
     
     /**
-     Reset the timer with a new meeting length and new attendees.
-     
+     Reset the timer with a new meeting length and attendees.
      - Parameters:
          - lengthInMinutes: The meeting length.
          - attendees: The name of each attendee.
