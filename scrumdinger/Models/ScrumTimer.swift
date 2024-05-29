@@ -59,26 +59,51 @@ final class ScrumTimer: ObservableObject {
     }
     
     // Publicly accessible getters
-    
     func getStartDate() -> Date? {
         return self.startDate
     }
-    
     func getTimerStopped() -> Bool {
         return self.timerStopped
     }
-    
     func updateCalled() -> Bool {
         return self.updated
     }
-    
     func getTimer() -> Timer? {
         return self.timer
     }
-    
     func getFrequency() -> TimeInterval {
         return self.frequency
     }
+    func getSecondsElapsedForSpeaker() -> Int {
+        return self.secondsElapsedForSpeaker
+    }
+    func getSecondsElapsed() -> Int {
+        return self.secondsElapsed
+    }
+    func getSecondsPerSpeaker() -> Int {
+        return self.secondsPerSpeaker
+    }
+    func getSecondsRemaining() -> Int {
+        return self.secondsRemaining
+    }
+    func getSpeakerIndex() -> Int {
+        return self.speakerIndex
+    }
+    func getLengthInSeconds() -> Int {
+        return self.lengthInSeconds
+    }
+    
+    // Publicly accesssible setters
+    func setStartDate(startDate: Date) {
+        self.startDate = startDate
+    }
+    func setTimerStopped(timerStopped: Bool) {
+        self.timerStopped = timerStopped
+    }
+    func setSpeakerIndex(speakerIndex: Int) {
+        self.speakerIndex = speakerIndex
+    }
+    
     
     /// Start the timer.
     func startScrum() {
@@ -118,8 +143,7 @@ final class ScrumTimer: ObservableObject {
         startDate = Date()
     }
 
-
-    nonisolated private func update() {
+    nonisolated public func update() {
         Task { @MainActor in
             self.updated = true
             guard let startDate,

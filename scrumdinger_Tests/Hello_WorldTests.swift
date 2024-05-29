@@ -143,4 +143,26 @@ final class HelloWorld_TestsLaunch: XCTestCase {
         // The new current speaker should be simon
         XCTAssertEqual(timerClass.activeSpeaker, "Speaker 3: Simon")
     }
+    
+    // TODO: Address issues in the testUpdate() function
+    func testUpdate() {
+        let mockScrum: DailyScrum = mockScrums[0]
+        let timerClass: ScrumTimer = ScrumTimer(lengthInMinutes: 1, attendees: mockScrum.attendees)
+        timerClass.startScrum()         // Start the scrum with class generated values
+            
+        timerClass.setStartDate(startDate: Date(timeIntervalSince1970: 1000))    // Set fixed values
+        timerClass.setTimerStopped(timerStopped: false)
+        timerClass.setSpeakerIndex(speakerIndex: 1)     // Should be Daisy
+        
+        timerClass.update()         // Update
+        
+        // Assert
+        XCTAssertTrue(timerClass.updateCalled())
+        XCTAssertEqual(timerClass.getSecondsElapsedForSpeaker(), Int(Date().timeIntervalSince1970 - 1000))
+        XCTAssertEqual(timerClass.getSecondsElapsed(), timerClass.getSecondsPerSpeaker() * timerClass.getSpeakerIndex() + timerClass.getSecondsElapsed())
+        XCTAssertEqual(timerClass.secondsRemaining, max(timerClass.getLengthInSeconds() - timerClass.getSecondsElapsed(), 0))
+        XCTAssertEqual(timerClass.getSpeakerIndex(), 2)     // Should now be Simon
+        XCTAssertNotNil(timerClass.speakerChangedAction)
+    }
+    
 }
