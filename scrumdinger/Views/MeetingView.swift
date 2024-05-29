@@ -20,7 +20,7 @@ struct MeetingView: View {
     @State private var errorMessage: String?
     @State private var errorWrapper: ErrorWrapper?
     
-    var resource = "fake"
+    var resource = "ding"
     var resourceExtension = "wav"
     
     init(scrum: Binding<DailyScrum>) {

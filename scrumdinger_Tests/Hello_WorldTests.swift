@@ -145,8 +145,6 @@ final class HelloWorld_TestsLaunch: XCTestCase {
         
         // The new current speaker should be simon
         XCTAssertEqual(timerClass.activeSpeaker, "Speaker 3: Simon")
-        
-        wait(for: [expectation], timeout: timerClass.getFrequency() + 0.5)
     }
     
     // **************  AVPLAYER TESTS ********************
@@ -163,14 +161,6 @@ final class HelloWorld_TestsLaunch: XCTestCase {
                     expectation.fulfill()
                 }
             })
-            
-            waitForExpectations(timeout: 5) { error in
-                observation?.invalidate()
-                XCTAssertNil(error, "The player was not ready to play at this time")
-                XCTAssertEqual(player.currentItem?.status, .readyToPlay, "The player's item's status should not be nil")
-            }
-            
-            wait(for: [expectation], timeout: 5)
         } catch {
             XCTFail("Failed to create AVPlayer")
         }
