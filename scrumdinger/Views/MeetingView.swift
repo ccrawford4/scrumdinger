@@ -18,6 +18,7 @@ struct MeetingView: View {
     @State private var isRecording = false
     @State private var player: AVPlayer?
     @State private var errorMessage: String?
+    @State private var errorWrapper: ErrorWrapper?
     
     var resource = "fake"
     var resourceExtension = "wav"
@@ -31,15 +32,9 @@ struct MeetingView: View {
             RoundedRectangle(cornerRadius: 16.0)
                 .fill(scrum.theme.mainColor)
             VStack {
-                if let errorMessage = errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                }
-                else {
-                    MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: scrum.theme)
-                    MeetingTimerView(speakers: scrumTimer.speakers, isRecording: isRecording, theme: scrum.theme)
-                    MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
-                }
+                MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: scrum.theme)
+                MeetingTimerView(speakers: scrumTimer.speakers, isRecording: isRecording, theme: scrum.theme)
+                MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
             }
             .padding()
             .foregroundColor(scrum.theme.accentColor)
@@ -52,6 +47,11 @@ struct MeetingView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
         }
+        .sheet(item: $errorWrapper) {}
+        content: { wrapper in
+            ErrorView(errorWrapper: wrapper)
+        }
+        
     }
         
     private func startScrum() {
@@ -80,11 +80,13 @@ struct MeetingView: View {
     private func setUpPlayer() {
         do {
             player = try AVPlayer.customPlayer(resource: resource, resourceExtension: resourceExtension)
-        } catch AVPlayerError.resourceNotFound(let resource, let resourceExtension) {
+        } catch let error as AVPlayerError {
             errorMessage = "Failed to load sound file: \(resource).\(resourceExtension)"
+            errorWrapper = ErrorWrapper(error: error, guidance: "Cannot Load Audio File. Please Try Again Later")
         }
         catch {
             errorMessage = "Unexpected error: \(error.localizedDescription)"
+            errorWrapper = ErrorWrapper(error: error, guidance: "Please Try Again Later")
         }
     }
         
