@@ -8,11 +8,23 @@
 import Foundation
 import AVFoundation
 
+enum AVPlayerError: Error, LocalizedError {
+    case resourceNotFound(resource: String, resourceExtension: String)
+    
+    var errorDescription: String? {
+        switch self {
+        case .resourceNotFound(let resource, let resourceExtension):
+            return "Failed to find \(resource).\(resourceExtension) sound file."
+        }
+    }
+}
+
 extension AVPlayer {
-    static let sharedDingPlayer: AVPlayer = {
-        guard let url = Bundle.main.url(forResource: "ding", withExtension: "wav") else {
-            fatalError("Failed to find sound file.")
+    static func customPlayer(resource: String, resourceExtension: String) throws -> AVPlayer {
+        guard let url = Bundle.main.url(forResource: resource, withExtension: resourceExtension) else {
+            return AVPlayerError.resourceNotFound(resource: resource, resourceExtension: resourceExtension) as! AVPlayer
         }
         return AVPlayer(url: url)
-    }()
+    }
 }
+

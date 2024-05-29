@@ -80,7 +80,7 @@ final class ScrumTimer: ObservableObject {
     func getSecondsElapsed() -> Int {
         return self.secondsElapsed
     }
-    func getSecondsPerSpeaker() -> Int {
+    func getSecondsPerSpeaker() -> (Int) {
         return self.secondsPerSpeaker
     }
     func getSecondsRemaining() -> Int {
@@ -94,14 +94,20 @@ final class ScrumTimer: ObservableObject {
     }
     
     // Publicly accesssible setters
-    func setStartDate(startDate: Date) {
+    func setStartDate(startDate: Date) -> Void {
         self.startDate = startDate
     }
-    func setTimerStopped(timerStopped: Bool) {
+    func setTimerStopped(timerStopped: Bool) -> Void {
         self.timerStopped = timerStopped
     }
-    func setSpeakerIndex(speakerIndex: Int) {
+    func setSpeakerIndex(speakerIndex: Int) -> Void{
         self.speakerIndex = speakerIndex
+    }
+    func setSecondsElapsedForSpeaker(secondsElapsedForSpeaker: Int) -> Void {
+        self.secondsElapsedForSpeaker = secondsElapsedForSpeaker
+    }
+    func setSecondsElapsed(secondsElapsed: Int) -> Void {
+        self.secondsElapsed = secondsElapsed
     }
     
     

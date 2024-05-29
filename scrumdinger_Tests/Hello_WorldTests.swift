@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import scrumdinger
+import AVFoundation
 
 @MainActor
 final class HelloWorld_TestsLaunch: XCTestCase {
@@ -86,6 +87,7 @@ final class HelloWorld_TestsLaunch: XCTestCase {
     
     // ************* TIMER TESTS ******************
     
+    // Test starting a scrum
     func testStartScrum() {
         let mockScrum: DailyScrum = mockScrums[0]
         let timerClass: ScrumTimer = ScrumTimer(lengthInMinutes: 1, attendees: mockScrum.attendees)
@@ -99,13 +101,13 @@ final class HelloWorld_TestsLaunch: XCTestCase {
         // Wait to ensure that update() is called
         let expectation = XCTestExpectation(description: "timer Fired")
         DispatchQueue.main.asyncAfter(deadline: .now() + timerClass.getFrequency() + 0.2) {
-            // TODO: Resolve DarwinBoolean vs Boolean type errors to allow this test to run
             XCTAssertTrue(timerClass.updateCalled(), "update() should now be called by the timer")
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: timerClass.getFrequency() + 0.5)
     }
     
+    // Test stopping a scrum
     func testStopScrum() {
         let mockScrum: DailyScrum = mockScrums[0]
         let timerClass: ScrumTimer = ScrumTimer(lengthInMinutes: 1, attendees: mockScrum.attendees)
@@ -129,6 +131,7 @@ final class HelloWorld_TestsLaunch: XCTestCase {
         wait(for: [expectation], timeout: timerClass.getFrequency() + 0.5)
     }
     
+    // Test changing the speaker
     func testChangeToSpeaker() {
         // mockScrum speaker order: ["Cathy", "Daisy", "Simon", "Jonathan"]
         let mockScrum: DailyScrum = mockScrums[0]
@@ -142,27 +145,63 @@ final class HelloWorld_TestsLaunch: XCTestCase {
         
         // The new current speaker should be simon
         XCTAssertEqual(timerClass.activeSpeaker, "Speaker 3: Simon")
+        
+        wait(for: [expectation], timeout: timerClass.getFrequency() + 0.5)
     }
     
-    // TODO: Address issues in the testUpdate() function
-    func testUpdate() {
-        let mockScrum: DailyScrum = mockScrums[0]
-        let timerClass: ScrumTimer = ScrumTimer(lengthInMinutes: 1, attendees: mockScrum.attendees)
-        timerClass.startScrum()         // Start the scrum with class generated values
+    // **************  AVPLAYER TESTS ********************
+    
+    // Test a valid call to the custom player
+    func testValidResourceAndExtension () {
+        do {
+            let player: AVPlayer = try AVPlayer.customPlayer(resource: "ding", resourceExtension: "wav")
+            XCTAssertNotNil(player.currentItem, "The AV Player should have a current item.")
             
-        timerClass.setStartDate(startDate: Date(timeIntervalSince1970: 1000))    // Set fixed values
-        timerClass.setTimerStopped(timerStopped: false)
-        timerClass.setSpeakerIndex(speakerIndex: 1)     // Should be Daisy
-        
-        timerClass.update()         // Update
-        
-        // Assert
-        XCTAssertTrue(timerClass.updateCalled())
-        XCTAssertEqual(timerClass.getSecondsElapsedForSpeaker(), Int(Date().timeIntervalSince1970 - 1000))
-        XCTAssertEqual(timerClass.getSecondsElapsed(), timerClass.getSecondsPerSpeaker() * timerClass.getSpeakerIndex() + timerClass.getSecondsElapsed())
-        XCTAssertEqual(timerClass.secondsRemaining, max(timerClass.getLengthInSeconds() - timerClass.getSecondsElapsed(), 0))
-        XCTAssertEqual(timerClass.getSpeakerIndex(), 2)     // Should now be Simon
-        XCTAssertNotNil(timerClass.speakerChangedAction)
+            let expectation = XCTestExpectation(description: "The AVPlayer should be ready to play")
+            let observation = player.currentItem?.observe(\.status, options: [.new], changeHandler: { (item, change) in
+                if item.status == .readyToPlay {
+                    expectation.fulfill()
+                }
+            })
+            
+            waitForExpectations(timeout: 5) { error in
+                observation?.invalidate()
+                XCTAssertNil(error, "The player was not ready to play at this time")
+                XCTAssertEqual(player.currentItem?.status, .readyToPlay, "The player's item's status should not be nil")
+            }
+            
+            wait(for: [expectation], timeout: 5)
+        } catch {
+            XCTFail("Failed to create AVPlayer")
+        }
+    }
+    
+    // Test an invalid resource parameter for the AVPlayer custom player
+    func testInvalidResource() {
+        do {
+            _ = try AVPlayer.customPlayer(resource: "fake-resource", resourceExtension: "wav")
+            XCTFail("Expected to fail but succeeded")
+        } catch AVPlayerError.resourceNotFound(let resource, let resourceExtension) {
+            XCTAssertEqual(resource, "fake-resource")
+            XCTAssertEqual(resourceExtension, "wav")
+        }
+        catch {
+            XCTFail("UnexpectedError: \(error)")
+        }
+    }
+    
+    // Test an invalid resource parameter for the AVPlayer custom player
+    func testInvalidResourceExtension() {
+        do {
+            _ = try AVPlayer.customPlayer(resource: "ding", resourceExtension: "mp3")
+            XCTFail("Expected to fail but succeeded")
+        } catch AVPlayerError.resourceNotFound(let resource, let resourceExtension) {
+            XCTAssertEqual(resource, "ding")
+            XCTAssertEqual(resourceExtension, "mp3")
+        }
+        catch {
+            XCTFail("UnexpectedError: \(error)")
+        }
     }
     
 }

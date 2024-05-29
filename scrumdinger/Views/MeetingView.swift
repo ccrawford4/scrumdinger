@@ -16,9 +16,10 @@ struct MeetingView: View {
     @StateObject var scrumTimer = ScrumTimer()
     @StateObject var speechRecognizer = SpeechRecognizer()
     @State private var isRecording = false
+    var resource = "ding"
+    var resourceExtension = "wav"
     
-    
-    private var player: AVPlayer { AVPlayer.sharedDingPlayer }
+    var player: AVPlayer { AVPlayer.customPlayer(resource: resource, resourceExtension: resourceExtension) }
     
     var body: some View {
         ZStack {
