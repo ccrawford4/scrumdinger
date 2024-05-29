@@ -16,23 +16,35 @@ struct MeetingView: View {
     @StateObject var scrumTimer = ScrumTimer()
     @StateObject var speechRecognizer = SpeechRecognizer()
     @State private var isRecording = false
-    var resource = "ding"
+    @State private var player: AVPlayer?
+    @State private var errorMessage: String?
+    
+    var resource = "fake"
     var resourceExtension = "wav"
     
-    var player: AVPlayer { AVPlayer.customPlayer(resource: resource, resourceExtension: resourceExtension) }
+    init(scrum: Binding<DailyScrum>) {
+        self._scrum = scrum
+    }
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16.0)
                 .fill(scrum.theme.mainColor)
             VStack {
-                MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: scrum.theme)
-                MeetingTimerView(speakers: scrumTimer.speakers, isRecording: isRecording, theme: scrum.theme)
-                MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
+                if let errorMessage = errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                }
+                else {
+                    MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: scrum.theme)
+                    MeetingTimerView(speakers: scrumTimer.speakers, isRecording: isRecording, theme: scrum.theme)
+                    MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
+                }
             }
             .padding()
             .foregroundColor(scrum.theme.accentColor)
             .onAppear {
+                setUpPlayer()
                 startScrum()
             }
             .onDisappear {
@@ -46,8 +58,8 @@ struct MeetingView: View {
         scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
         // Ensure audio plays from beginning
         scrumTimer.speakerChangedAction = {
-            player.seek(to: .zero)
-            player.play()
+            player?.seek(to: .zero)
+            player?.play()
         }
         // Reset the transcription and start again
         speechRecognizer.resetTranscript()
@@ -63,6 +75,17 @@ struct MeetingView: View {
         isRecording = false
         let newHistory = History(attendees: scrum.attendees, transcript: speechRecognizer.transcript)
         scrum.history.insert(newHistory, at: 0)
+    }
+    
+    private func setUpPlayer() {
+        do {
+            player = try AVPlayer.customPlayer(resource: resource, resourceExtension: resourceExtension)
+        } catch AVPlayerError.resourceNotFound(let resource, let resourceExtension) {
+            errorMessage = "Failed to load sound file: \(resource).\(resourceExtension)"
+        }
+        catch {
+            errorMessage = "Unexpected error: \(error.localizedDescription)"
+        }
     }
         
 }

@@ -22,7 +22,7 @@ enum AVPlayerError: Error, LocalizedError {
 extension AVPlayer {
     static func customPlayer(resource: String, resourceExtension: String) throws -> AVPlayer {
         guard let url = Bundle.main.url(forResource: resource, withExtension: resourceExtension) else {
-            return AVPlayerError.resourceNotFound(resource: resource, resourceExtension: resourceExtension) as! AVPlayer
+            throw AVPlayerError.resourceNotFound(resource: resource, resourceExtension: resourceExtension)
         }
         return AVPlayer(url: url)
     }
