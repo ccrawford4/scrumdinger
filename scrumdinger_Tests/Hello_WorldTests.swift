@@ -87,6 +87,7 @@ final class HelloWorld_TestsLaunch: XCTestCase {
     }
     
     // ************* TIMER TESTS ******************
+    
     func testStartScrum() {
         var mockScrum: DailyScrum = mockScrums[0]
         let timerClass: ScrumTimer = ScrumTimer(lengthInMinutes: 1, attendees: mockScrum.attendees)
@@ -101,13 +102,32 @@ final class HelloWorld_TestsLaunch: XCTestCase {
         let expectation = expectation(description: "timer Fired")
         DispatchQueue.main.asyncAfter(deadline: .now() + timerClass.getFrequency() + 0.2) {
             // TODO: Resolve DarwinBoolean vs Boolean type errors to allow this test to run
-           // XCTAssertTrue(timerClass.updateCalled(), "update() should now be called by the timer")
+            XCTAssertTrue(timerClass.updateCalled(), "update() should now be called by the timer")
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: timerClass.getFrequency() + 0.5)
-        
-        
     }
     
-    
+    func testStopScrum() {
+        var mockScrum: DailyScrum = mockScrums[0]
+        let timerClass: ScrumTimer = ScrumTimer(lengthInMinutes: 1, attendees: mockScrum.attendees)
+        let expectation = self.expectation(description: "Timer invalidation")
+        
+        timerClass.startScrum()
+        timerClass.stopScrum()
+        
+        // Ensure that the timer stopped variable was triggered
+        XCTAssertEqual(timerClass.getTimerStopped(), true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + timerClass.getFrequency() + 0.1) {
+            // Timer should no longer be valid
+            if let timer = timerClass.getTimer(), timer.isValid {
+                XCTFail("Timer should be invalidated")
+            } else {
+                // Timer was successfully invalidated
+                expectation.fulfill()
+            }
+        }
+        wait(for: [expectation], timeout: timerClass.getFrequency() + 0.5)
+    }
 }

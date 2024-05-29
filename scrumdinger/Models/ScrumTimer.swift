@@ -30,7 +30,7 @@ final class ScrumTimer: ObservableObject {
 
     private weak var timer: Timer?
     private var timerStopped = false
-    private var updated: DarwinBoolean = false
+    private var updated: Bool = false
     private var frequency: TimeInterval { 1.0 / 60.0 }
     private var lengthInSeconds: Int { lengthInMinutes * 60 }
     private var secondsPerSpeaker: Int {
@@ -58,7 +58,11 @@ final class ScrumTimer: ObservableObject {
         activeSpeaker = speakerText
     }
     
-    func updateCalled() -> DarwinBoolean {
+    func getTimerStopped() -> Bool {
+        return self.timerStopped
+    }
+    
+    func updateCalled() -> Bool {
         return self.updated
     }
     
