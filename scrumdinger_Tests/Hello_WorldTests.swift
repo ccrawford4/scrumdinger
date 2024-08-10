@@ -11,6 +11,7 @@ import AVFoundation
 
 @MainActor
 final class HelloWorld_TestsLaunch: XCTestCase {
+    // UNIT TEST CLASS
     var mockScrums: [DailyScrum] = DailyScrum.sampleData
     let scrumStore = ScrumStore()
     

@@ -12,6 +12,8 @@ struct DetailEditView: View {
     
     @State private var newAttendeeName = ""
     
+    // TODO: Improve so that we use functions for these
+    
     var body: some View {
         Form {
             Section(header: Text("Meeting Info")) {
